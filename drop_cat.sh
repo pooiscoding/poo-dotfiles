@@ -10,6 +10,6 @@ re="$(rm -d ~/.mycmd 2>&1)"
 PATH_LINE=$(echo -n "PATH=\\\"\$PATH:$(readlink -f ~)/.mycmd\\\"" \
 		| sed 's/\//\\\//g')
 
-if [[ -z "$re" ]]; then echo "hihi" && sed -i "/$PATH_LINE/d" ~/.bashrc; fi
+if [[ -z "$re" ]]; then sed -i "/$PATH_LINE/d" ~/.bashrc; fi
 
 sed -i '/prcat/d' ~/.bashrc
