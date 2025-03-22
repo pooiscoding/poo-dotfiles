@@ -29,32 +29,27 @@ Inside the `.cats` directory, apart from `prcat.sh`, you will find files named `
 
 Currently, there are files named `cat1` through `cat6`. You can add more cat ASCII files as long as their filenames match the regex pattern `cat[0-9]+`, allowing `prcat` to load them.
 
-#### Recommended Setup
+#### Quick setup (If you don't want to clone my repo)
 
-It is recommended to place `.cats` under the home directory:
-
-> Note that the `.bashrc` provided by me add `~/mycmd` in `PATH`
-
-Quick test (Just test the `prcat` command)
+> Note that in the setup script, the `~/.mycmd` directory is added into `$PATH`
 
 ```bash
-cd ~
-test ! -d mycmd && mkdir mycmd && PATH=$PATH:$(readlink -f ~)/mycmd
-ln -s ~/.cats/prcat.sh mycmd/prcat
-prcat # Test the command
+curl -fL -o setup_cat.sh -O "https://raw.githubusercontent.com/pooiscoding/poo-dotfiles/refs/heads/main/setup_cat.sh"
+chmod +x setup_cat.sh
+./setup_cat.sh
+source ~/.bashrc
 ```
 
-Quick setup (If you don't want to use my `.bashrc`)
+#### Quick drop (If you want to drop this package)
 
 ```bash
-test ! -d mycmd && mkdir mycmd
-echo 'PATH=$PATH:'"$(readlink -f ~)/mycmd" >> ~/.bashrc
-echo "prcat" >> ~/.bashrc
-ln -s ~/.cats/prcat.sh mycmd/prcat
-source ~/bashrc # Test the command 
+curl -fL -o drop_cat.sh -O "https://raw.githubusercontent.com/pooiscoding/poo-dotfiles/refs/heads/main/drop_cat.sh"
+chmod +x drop_cat.sh
+./drop_cat.sh
+source ~/.bashrc
 ```
 
-This setup ensures easy access to the `prcat` command while maintaining customization options.
+This setup ensures easy access to the `prcat` command.
 
 ## Vim part
 
