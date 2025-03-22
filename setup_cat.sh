@@ -23,4 +23,3 @@ echo "prcat" >> ~/.bashrc
 
 ln -s ~/.cats/prcat.sh ~/.mycmd/prcat
 
-rm -f $0
